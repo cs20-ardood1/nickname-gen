@@ -1,19 +1,15 @@
 // Nickname Generator Assignment
 
-// Button Event Listener
-document
-  .getElementById("all-nicknames")
-  .addEventListener("click", allNicknames);
-document
-  .getElementById("rand-nickname")
-  .addEventListener("click", randomNickname);
+// Button Event Listeners
+document.getElementById("all-nicknames").addEventListener("click", allNicknames);
+document.getElementById("rand-nickname").addEventListener("click", randomNickname);
 
 function allNicknames() {
   // Get user's first and last name
   let firstName = document.getElementById("first-name").value;
   let lastName = document.getElementById("last-name").value;
 
-  // Get the output element
+  // Output element
   let outputEl = document.getElementById("output");
 
   let output = "";
@@ -29,12 +25,16 @@ function randomNickname() {
   let firstName = document.getElementById("first-name").value;
   let lastName = document.getElementById("last-name").value;
 
-  // Get the output element
+  // Output element
   let outputEl = document.getElementById("output");
+
+  // Get random index from array "names"
   let randomIndex = Math.floor(Math.random() * names.length);
+
+  // Assign "randname" a random index from "randomIndex" 
   let randName = names[randomIndex];
 
-  // Display the random nickname in the output element
+
   outputEl.innerHTML = `${firstName} "${randName}" ${lastName}<br>`;
 }
 
